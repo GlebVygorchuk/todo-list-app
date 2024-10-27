@@ -26,7 +26,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Don't click
+        TEST CHANGES
       </p>
     </>
   )
