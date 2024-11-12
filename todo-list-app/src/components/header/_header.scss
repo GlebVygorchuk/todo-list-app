@@ -1,0 +1,168 @@
+.disappear {
+    @keyframes disappear {
+        from {opacity: 1;}
+        to {opacity: 0;}
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 60px;
+    row-gap: 30px;
+
+    &__wrapper {
+        display: inline-block;
+    }
+
+    @keyframes typing {
+        from {width: 0;}
+        to {width: 100%;}
+    }
+
+    @keyframes cursor {
+        0% {
+            border-color: #092834;
+        }
+        50% {
+            border-color: transparent;
+        }
+        100% {
+            border-color: #092834
+        }
+    }
+
+    @keyframes appear {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    &__title {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0%;
+
+        border-right: solid 3px white;
+        color: #092834;
+
+        font-weight: 600;
+        font-size: 55px;
+
+        animation: typing 2s steps(20, end) forwards, cursor 1s step-end infinite;
+        user-select: none;
+
+        @include tablet {
+            font-size: 45px;
+        }
+
+        @include mobile {
+            font-size: 30px;
+        }
+
+        @include mobile-small {
+            font-size: 25px;
+        }
+
+        @include mobile-xs {
+            font-size: 20px;
+        }
+    }
+
+    &__new-task {
+        display: flex;
+        justify-content: center;
+
+        column-gap: 0px;
+        width: 100%;
+
+        animation: appear 0.5s forwards;
+    }
+
+    &__create-task {
+        font-family: var(--font-family);
+        font-size: 20px;
+
+        width: 40%;
+        padding: 15px;
+
+        background-color: white;
+        color: #114f67;
+
+        border: none;
+        border-right: 1px solid #285f74;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            font-family: var(--font-family);
+            color: #57a1bc;
+            user-select: none;
+
+            @include mobile-small {
+                font-size: 17px;
+            }
+        }
+
+        @include tablet {
+            width: 50%;
+        }
+
+        @include mobile-small {
+            padding: 10px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            font-size: 17px;
+        }
+    }
+
+    &__button {
+        font-family: var(--font-family);
+        font-size: 22.5px;
+        font-weight: 800;
+
+        background-color: white;
+        color: #114f67;
+
+        width: 12.5%;
+
+        border: none;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        
+        cursor: pointer;
+        transition: 0.15s;
+        user-select: none;
+
+        &:hover {
+            background-color: #114f67;
+            color: white;
+        }
+
+        &:active {
+            text-decoration: underline;
+        }
+
+        @include tablet {
+            width: 15%;
+            font-size: 20px;
+        }
+
+        @include mobile {
+            width: 20%;
+        }
+
+        @include mobile-small {
+            width: 25%;
+            font-size: 17.5px;
+
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+    }
+}

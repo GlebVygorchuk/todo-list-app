@@ -1,0 +1,12 @@
+@import 
+'variables',
+'fonts',
+'media',
+'../components/header/header',
+'../components/taskList/taskList';
+
+body {
+    background: linear-gradient(to right, #4BA3C3, #CCE6F4);
+    font-family: var(--font-family);
+    color: #114f67; 
+}

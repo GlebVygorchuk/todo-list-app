@@ -1,0 +1,223 @@
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes drop {
+    from {top: 0;}
+    to {top: 20px}
+}
+
+@keyframes toLeft {
+    from {left: 0px}
+    to {left: 250px}
+}
+
+@keyframes disappear {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes delete {
+    from {display: flex;}
+    to {display: none;}
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    margin-top: -15px;
+}
+
+.tasks {
+    width: 50%;
+    padding: 20px;
+    min-height: 300px;
+
+    &__list {
+        list-style: none;
+
+        display: flex;
+        flex-direction: column;
+
+        row-gap: 10px;
+        margin: 0;
+        padding: 0;
+
+        &__total {
+            display: flex;
+            justify-content: center;
+            column-gap: 30px;
+            margin-top: 10px;
+
+            p {
+                font-size: 30px;
+                font-weight: 600;
+
+                @include tablet {
+                    font-size: 25px;
+                }
+
+                @include mobile {
+                    font-size: 20px;
+                }
+
+                @include mobile-xs {
+                    font-size: 18px;
+                }
+            }
+
+            &__delete {
+                border: none;
+                border-radius: 20px;
+    
+                align-self: center;
+                padding: 12px 60px;
+    
+                font-family: var(--font-family);
+                font-size: 25px;
+                font-weight: 600;
+    
+                color: #114f67;
+                background-color: white;
+    
+                cursor: pointer; 
+                transition: 0.2s;
+                animation: appear 0.5s forwards;
+    
+                &:hover {
+                    background-color: #114f67;
+                    color: white;
+                }
+
+                @include tablet {
+                    padding: 12px 40px;
+                    font-size: 20px;
+                }
+
+                @include mobile {
+                    padding: 10px 30px;
+                    border-radius: 15px;
+                    font-size: 17.5px;
+                }
+
+                @include mobile-small {
+                    padding: 8px 25px;
+                }
+            }
+
+            @include mobile-small {
+                column-gap: 10px;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        background-color: white;
+        color: #114f67;
+
+        word-wrap: break-word;
+        display: flex;
+        justify-content: space-between;
+
+        border: none;
+        border-radius: 20px;
+
+        padding: 5px 7.5px;
+
+        font-size: 20px;
+        font-weight: 600;
+
+        transition: 0.2s;
+        animation: appear 0.3s forwards, drop 0.3s forwards;
+
+        &__buttons {
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+            column-gap: 5px;
+        }
+
+        &__item-wrapper {
+            display: flex;
+            column-gap: 5px;
+        }
+
+        &__text-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 7.5px;
+        }
+
+        &__tick-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            opacity: 0;
+            position: absolute;
+            height: 80%;
+
+            left: -50px;
+            top: 7.5px;
+
+            @include mobile-small {
+                left: -40px;
+                width: 30px;
+            }
+        }
+
+        @include mobile-small {
+            font-size: 17px;
+            border-radius: 15px;
+        }
+
+        @include mobile-xs {
+            font-size: 15px;
+        }
+    }
+
+    &__button {
+        border: none;
+        border-radius: 14px;
+
+        background-color: #114f67;
+        padding: 6px 10px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    @include tablet {
+        width: 60%;
+    }
+
+    @include mobile {
+        width: 80%;
+    }
+
+    @include mobile-small {
+        width: 80%;
+    }
+}
+
+.done {
+    background-color: #4386a0;
+    color: white;
+}
+
+.tick {
+    animation: appear 0.5s forwards;
+}
+
+.remove {
+    top: 20px;
+
+    animation: toLeft 0.5s forwards, disappear 0.5s forwards, delete 0.5s forwards
+}
