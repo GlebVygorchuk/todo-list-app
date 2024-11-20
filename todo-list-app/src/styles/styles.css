@@ -64,7 +64,7 @@
   color: #092834;
   font-weight: 600;
   font-size: 55px;
-  animation: typing 2s steps(20, end) forwards, cursor 1s step-end infinite;
+  animation: typing 1s steps(8, end) forwards, cursor 1s step-end infinite;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -76,17 +76,7 @@
 }
 @media (max-width: 770px) {
   .header__title {
-    font-size: 30px;
-  }
-}
-@media (max-width: 480px) {
-  .header__title {
-    font-size: 25px;
-  }
-}
-@media (max-width: 400px) {
-  .header__title {
-    font-size: 20px;
+    font-size: 40px;
   }
 }
 .header__new-task {
@@ -105,9 +95,9 @@
   background-color: white;
   color: #114f67;
   border: none;
-  border-right: 1px solid #285f74;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-right: 1.5px solid rgba(62, 124, 148, 0.5568627451);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .header__create-task:focus {
   outline: none;
@@ -127,10 +117,10 @@
 }
 @media (max-width: 480px) {
   .header__create-task::-moz-placeholder {
-    font-size: 17px;
+    font-size: 22.5px;
   }
   .header__create-task::placeholder {
-    font-size: 17px;
+    font-size: 22.5px;
   }
 }
 @media (max-width: 1020px) {
@@ -140,22 +130,23 @@
 }
 @media (max-width: 480px) {
   .header__create-task {
-    padding: 10px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    font-size: 17px;
+    width: 60%;
+    padding: 15px;
+    border-top-left-radius: 7.5px;
+    border-bottom-left-radius: 7.5px;
+    font-size: 22.5px;
   }
 }
 .header__button {
   font-family: var(--font-family);
-  font-size: 22.5px;
+  font-size: 25px;
   font-weight: 800;
   background-color: white;
   color: #114f67;
-  width: 12.5%;
+  width: 10%;
   border: none;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   cursor: pointer;
   transition: 0.15s;
   -webkit-user-select: none;
@@ -171,8 +162,8 @@
 }
 @media (max-width: 1020px) {
   .header__button {
-    width: 15%;
-    font-size: 20px;
+    width: 10%;
+    font-size: 25px;
   }
 }
 @media (max-width: 770px) {
@@ -183,9 +174,8 @@
 @media (max-width: 480px) {
   .header__button {
     width: 25%;
-    font-size: 17.5px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 7.5px;
+    border-bottom-right-radius: 7.5px;
   }
 }
 
@@ -205,12 +195,12 @@
     top: 20px;
   }
 }
-@keyframes toLeft {
+@keyframes toRight {
   from {
-    left: 0px;
+    transform: translateX(0px);
   }
   to {
-    left: 250px;
+    transform: translateX(200px);
   }
 }
 @keyframes disappear {
@@ -237,7 +227,7 @@
 
 .tasks {
   width: 50%;
-  padding: 20px;
+  padding: 10px;
   min-height: 300px;
 }
 .tasks__list {
@@ -256,27 +246,14 @@
   margin-top: 10px;
 }
 .tasks__list__total p {
+  margin: 20px;
   font-size: 30px;
   font-weight: 600;
-}
-@media (max-width: 1020px) {
-  .tasks__list__total p {
-    font-size: 25px;
-  }
-}
-@media (max-width: 770px) {
-  .tasks__list__total p {
-    font-size: 20px;
-  }
-}
-@media (max-width: 400px) {
-  .tasks__list__total p {
-    font-size: 18px;
-  }
+  align-self: center;
 }
 .tasks__list__total__delete {
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   align-self: center;
   padding: 12px 60px;
   font-family: var(--font-family);
@@ -292,28 +269,11 @@
   background-color: #114f67;
   color: white;
 }
-@media (max-width: 1020px) {
-  .tasks__list__total__delete {
-    padding: 12px 40px;
-    font-size: 20px;
-  }
-}
-@media (max-width: 770px) {
-  .tasks__list__total__delete {
-    padding: 10px 30px;
-    border-radius: 15px;
-    font-size: 17.5px;
-  }
-}
-@media (max-width: 480px) {
-  .tasks__list__total__delete {
-    padding: 8px 25px;
-  }
-}
 @media (max-width: 480px) {
   .tasks__list__total {
     -moz-column-gap: 10px;
          column-gap: 10px;
+    flex-direction: column;
   }
 }
 .tasks__item {
@@ -324,10 +284,10 @@
   display: flex;
   justify-content: space-between;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 5px 7.5px;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
   transition: 0.2s;
   animation: appear 0.3s forwards, drop 0.3s forwards;
 }
@@ -367,18 +327,13 @@
 }
 @media (max-width: 480px) {
   .tasks__item {
-    font-size: 17px;
-    border-radius: 15px;
-  }
-}
-@media (max-width: 400px) {
-  .tasks__item {
-    font-size: 15px;
+    font-size: 22.5px;
+    border-radius: 7.5px;
   }
 }
 .tasks__button {
   border: none;
-  border-radius: 14px;
+  border-radius: 7.5px;
   background-color: #114f67;
   padding: 6px 10px;
   cursor: pointer;
@@ -399,22 +354,18 @@
 }
 @media (max-width: 480px) {
   .tasks {
-    width: 80%;
+    width: 100%;
   }
 }
 
 .done {
-  background-color: #4386a0;
-  color: white;
-}
-
-.tick {
-  animation: appear 0.5s forwards;
+  background-color: rgba(17, 79, 103, 0.431372549);
+  color: rgba(255, 255, 255, 0.818);
 }
 
 .remove {
   top: 20px;
-  animation: toLeft 0.5s forwards, disappear 0.5s forwards, delete 0.5s forwards;
+  animation: toRight 0.5s forwards, disappear 0.5s forwards, delete 0.5s forwards;
 }
 
 body {

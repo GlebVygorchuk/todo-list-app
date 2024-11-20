@@ -8,9 +8,9 @@
     to {top: 20px}
 }
 
-@keyframes toLeft {
-    from {left: 0px}
-    to {left: 250px}
+@keyframes toRight {
+    from {transform: translateX(0px)}
+    to {transform: translateX(200px)}
 }
 
 @keyframes disappear {
@@ -31,7 +31,7 @@
 
 .tasks {
     width: 50%;
-    padding: 20px;
+    padding: 10px;
     min-height: 300px;
 
     &__list {
@@ -51,25 +51,15 @@
             margin-top: 10px;
 
             p {
+                margin: 20px;
                 font-size: 30px;
                 font-weight: 600;
-
-                @include tablet {
-                    font-size: 25px;
-                }
-
-                @include mobile {
-                    font-size: 20px;
-                }
-
-                @include mobile-xs {
-                    font-size: 18px;
-                }
+                align-self: center;
             }
 
             &__delete {
                 border: none;
-                border-radius: 20px;
+                border-radius: 10px;
     
                 align-self: center;
                 padding: 12px 60px;
@@ -89,25 +79,11 @@
                     background-color: #114f67;
                     color: white;
                 }
-
-                @include tablet {
-                    padding: 12px 40px;
-                    font-size: 20px;
-                }
-
-                @include mobile {
-                    padding: 10px 30px;
-                    border-radius: 15px;
-                    font-size: 17.5px;
-                }
-
-                @include mobile-small {
-                    padding: 8px 25px;
-                }
             }
 
             @include mobile-small {
                 column-gap: 10px;
+                flex-direction: column;
             }
         }
     }
@@ -123,12 +99,12 @@
         justify-content: space-between;
 
         border: none;
-        border-radius: 20px;
+        border-radius: 10px;
 
         padding: 5px 7.5px;
 
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 400;
 
         transition: 0.2s;
         animation: appear 0.3s forwards, drop 0.3s forwards;
@@ -171,18 +147,14 @@
         }
 
         @include mobile-small {
-            font-size: 17px;
-            border-radius: 15px;
-        }
-
-        @include mobile-xs {
-            font-size: 15px;
+            font-size: 22.5px;
+            border-radius: 7.5px;
         }
     }
 
     &__button {
         border: none;
-        border-radius: 14px;
+        border-radius: 7.5px;
 
         background-color: #114f67;
         padding: 6px 10px;
@@ -203,21 +175,17 @@
     }
 
     @include mobile-small {
-        width: 80%;
+        width: 100%;
     }
 }
 
 .done {
-    background-color: #4386a0;
-    color: white;
-}
-
-.tick {
-    animation: appear 0.5s forwards;
+    background-color: #114f676e;
+    color: rgba(255, 255, 255, 0.818);
 }
 
 .remove {
     top: 20px;
 
-    animation: toLeft 0.5s forwards, disappear 0.5s forwards, delete 0.5s forwards
+    animation: toRight 0.5s forwards, disappear 0.5s forwards, delete 0.5s forwards
 }

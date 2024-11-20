@@ -50,7 +50,7 @@
         font-weight: 600;
         font-size: 55px;
 
-        animation: typing 2s steps(20, end) forwards, cursor 1s step-end infinite;
+        animation: typing 1s steps(8, end) forwards, cursor 1s step-end infinite;
         user-select: none;
 
         @include tablet {
@@ -58,15 +58,7 @@
         }
 
         @include mobile {
-            font-size: 30px;
-        }
-
-        @include mobile-small {
-            font-size: 25px;
-        }
-
-        @include mobile-xs {
-            font-size: 20px;
+            font-size: 40px;
         }
     }
 
@@ -91,9 +83,9 @@
         color: #114f67;
 
         border: none;
-        border-right: 1px solid #285f74;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
+        border-right: 1.5px solid #3e7c948e;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
         
         &:focus {
             outline: none;
@@ -105,7 +97,7 @@
             user-select: none;
 
             @include mobile-small {
-                font-size: 17px;
+                font-size: 22.5px;
             }
         }
 
@@ -114,26 +106,27 @@
         }
 
         @include mobile-small {
-            padding: 10px;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-            font-size: 17px;
+            width: 60%;
+            padding: 15px;
+            border-top-left-radius: 7.5px;
+            border-bottom-left-radius: 7.5px;
+            font-size: 22.5px;
         }
     }
 
     &__button {
         font-family: var(--font-family);
-        font-size: 22.5px;
+        font-size: 25px;
         font-weight: 800;
 
         background-color: white;
         color: #114f67;
 
-        width: 12.5%;
+        width: 10%;
 
         border: none;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
         
         cursor: pointer;
         transition: 0.15s;
@@ -149,8 +142,8 @@
         }
 
         @include tablet {
-            width: 15%;
-            font-size: 20px;
+            width: 10%;
+            font-size: 25px;
         }
 
         @include mobile {
@@ -159,10 +152,9 @@
 
         @include mobile-small {
             width: 25%;
-            font-size: 17.5px;
 
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
+            border-top-right-radius: 7.5px;
+            border-bottom-right-radius: 7.5px;
         }
     }
 }
