@@ -18,11 +18,6 @@
     to {opacity: 0;}
 }
 
-@keyframes delete {
-    from {display: flex;}
-    to {display: none;}
-}
-
 .main {
     display: flex;
     justify-content: center;
@@ -186,6 +181,5 @@
 
 .remove {
     top: 20px;
-
-    animation: toRight 0.5s forwards, disappear 0.5s forwards, delete 0.5s forwards
+    animation: toRight 0.5s forwards, disappear 0.5s forwards
 }
