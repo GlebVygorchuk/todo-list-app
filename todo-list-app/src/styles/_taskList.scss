@@ -19,6 +19,16 @@
     }
 }
 
+@keyframes disappear-mobile {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
 .main {
     display: flex;
     justify-content: center;
@@ -134,7 +144,7 @@
             animation: disappear 0.3s forwards;
 
             @include mobile {
-                animation: disappear 0.2s forwards;
+                animation: disappear-mobile 0.3s forwards;
             }
         }
     }

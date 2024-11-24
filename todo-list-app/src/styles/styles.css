@@ -205,6 +205,14 @@
     transform: translateX(80px);
   }
 }
+@keyframes disappear-mobile {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .main {
   display: flex;
   justify-content: center;
@@ -310,7 +318,7 @@
 }
 @media (max-width: 770px) {
   .tasks__item.remove {
-    animation: disappear 0.2s forwards;
+    animation: disappear-mobile 0.3s forwards;
   }
 }
 .tasks__button {
