@@ -4,8 +4,8 @@
 }
 
 @keyframes drop {
-    from {transform: translateY(0);}
-    to {transform: translateY(20px);}
+    from {transform: translateY(-20px);}
+    to {transform: translateY(0);}
 }
 
 @keyframes disappear {
@@ -15,7 +15,7 @@
     }
     to {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(80px);
     }
 }
 
@@ -29,6 +29,7 @@
     width: 50%;
     padding: 10px;
     min-height: 300px;
+    margin-top: 20px;
 
     &__list {
         list-style: none;
@@ -44,7 +45,6 @@
             display: flex;
             justify-content: center;
             column-gap: 30px;
-            margin-top: 10px;
 
             p {
                 margin: 20px;
@@ -86,8 +86,6 @@
     }
 
     &__item {
-        position: relative;
-
         background-color: white;
         color: #114f67;
 
@@ -106,6 +104,7 @@
         opacity: 1;
         animation: appear 0.3s forwards, drop 0.3s forwards;
         will-change: transform;
+        transition: 0.2s;
 
         &__buttons {
             display: flex;
@@ -130,6 +129,10 @@
             font-size: 22.5px;
             border-radius: 7.5px;
         }
+
+        &.remove {
+            animation: disappear 0.3s forwards;
+        }
     }
 
     &__button {
@@ -143,6 +146,13 @@
 
         &:hover {
             opacity: 0.7;
+        };
+
+        &__done {
+            &.completed {
+                opacity: 0.5;
+                cursor: default;
+            }
         }
     }
 
@@ -164,7 +174,3 @@
     color: rgba(255, 255, 255, 0.818);
 }
 
-.remove {
-    top: 20px;
-    animation: disappear 0.3s forwards;
-}
