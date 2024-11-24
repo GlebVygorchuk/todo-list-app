@@ -57,6 +57,7 @@ function App() {
 
     setTimeout(() => {
       setTodos([])
+      localStorage.setItem('todos', [])
     }, 300)
   }
 
