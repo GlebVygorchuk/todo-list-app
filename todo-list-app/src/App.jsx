@@ -18,6 +18,12 @@ function App() {
     }
   }, [todos])
 
+  useEffect(() => {
+    if (todos.length === 0) {
+      localStorage.setItem('todos', [])
+    }
+  }, [todos])
+
   const handleClick = () => {
     setInputValue('')
     const newTodo = [...todos, {id: Math.random(), text: inputValue}]
@@ -61,7 +67,6 @@ function App() {
 
     setTimeout(() => {
       setTodos([])
-      localStorage.setItem('todos', [])
     }, 300)
   }
 

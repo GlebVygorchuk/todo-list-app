@@ -131,7 +131,7 @@
         }
 
         &.remove {
-            animation: disappear 0.2s forwards;
+            animation: disappear 0.3s forwards;
 
             @include mobile {
                 animation: disappear 0.2s forwards;
