@@ -306,7 +306,12 @@
   }
 }
 .tasks__item.remove {
-  animation: disappear 0.3s forwards;
+  animation: disappear 0.2s forwards;
+}
+@media (max-width: 770px) {
+  .tasks__item.remove {
+    animation: disappear 0.2s forwards;
+  }
 }
 .tasks__button {
   border: none;

@@ -39,6 +39,10 @@ function App() {
     setTimeout(() => {
       const finalTodos = todos.filter(i => i.id !== item.id)
       setTodos(finalTodos)
+
+      if (todos.length === 0) {
+        localStorage.setItem('todos', [])
+      }
     }, 300)
   }
 
