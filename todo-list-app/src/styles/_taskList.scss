@@ -4,18 +4,19 @@
 }
 
 @keyframes drop {
-    from {top: 0;}
-    to {top: 20px}
-}
-
-@keyframes toRight {
-    from {transform: translateX(0px)}
-    to {transform: translateX(200px)}
+    from {transform: translateY(0);}
+    to {transform: translateY(20px);}
 }
 
 @keyframes disappear {
-    from {opacity: 1;}
-    to {opacity: 0;}
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100px);
+    }
 }
 
 .main {
@@ -50,6 +51,7 @@
                 font-size: 30px;
                 font-weight: 600;
                 align-self: center;
+                user-select: none;
             }
 
             &__delete {
@@ -101,8 +103,9 @@
         font-size: 20px;
         font-weight: 400;
 
-        transition: 0.2s;
+        opacity: 1;
         animation: appear 0.3s forwards, drop 0.3s forwards;
+        will-change: transform;
 
         &__buttons {
             display: flex;
@@ -121,24 +124,6 @@
             flex-direction: column;
             justify-content: center;
             margin-left: 7.5px;
-        }
-
-        &__tick-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            opacity: 0;
-            position: absolute;
-            height: 80%;
-
-            left: -50px;
-            top: 7.5px;
-
-            @include mobile-small {
-                left: -40px;
-                width: 30px;
-            }
         }
 
         @include mobile-small {
@@ -181,5 +166,5 @@
 
 .remove {
     top: 20px;
-    animation: toRight 0.5s forwards, disappear 0.5s forwards
+    animation: disappear 0.3s forwards;
 }

@@ -26,7 +26,7 @@ function App() {
     setTimeout(() => {
       const finalTodos = todos.filter(i => i.id !== item.id)
       setTodos(finalTodos)
-    }, 500)
+    }, 350)
   }
 
   const handleComplete = item => {
@@ -44,7 +44,7 @@ function App() {
 
     setTimeout(() => {
       setTodos([])
-    }, 500)
+    }, 350)
   }
 
   return (
