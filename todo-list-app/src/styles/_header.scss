@@ -66,6 +66,7 @@
     &__new-task {
         display: flex;
         justify-content: center;
+        margin-top: -15px;
 
         column-gap: 0px;
         width: 100%;
@@ -78,7 +79,7 @@
         font-size: 20px;
 
         width: 40%;
-        padding: 13px;
+        padding: 10px 15px;
         border: 2px solid var(--color-first);
 
         background-color: var(--color-second);
@@ -113,9 +114,8 @@
 
         @include mobile-small {
             width: 60%;
-            padding: 15px;
-            border-top-left-radius: 7.5px;
-            border-bottom-left-radius: 7.5px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
             font-size: 22.5px;
         }
     }
@@ -163,8 +163,8 @@
         @include mobile-small {
             width: 25%;
 
-            border-top-right-radius: 7.5px;
-            border-bottom-right-radius: 7.5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
     }
 }
