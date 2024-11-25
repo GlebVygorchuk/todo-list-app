@@ -21,10 +21,10 @@
 
 @keyframes disappear-mobile {
     from {
-        opacity: 1;
+            opacity: 1;
     }
     to {
-        opacity: 0;
+            opacity: 0;
     }
 }
 
@@ -65,26 +65,30 @@
             }
 
             &__delete {
-                border: none;
-                border-radius: 10px;
+                border: 2px solid var(--color-first);
+                border-radius: 5px;
     
                 align-self: center;
-                padding: 12px 60px;
+                padding: 10px 40px;
     
                 font-family: var(--font-family);
                 font-size: 25px;
                 font-weight: 600;
     
-                color: #114f67;
-                background-color: white;
+                color: var(--color-second);
+                background-color: var(--color-first);
+
+                box-shadow: 0px 0px 2px white,
+                            0px 0px 5px rgb(209, 209, 209),
+                            0px 0px 10px rgb(152, 152, 152);
     
                 cursor: pointer; 
                 transition: 0.2s;
                 animation: appear 0.5s forwards;
     
                 &:hover {
-                    background-color: #114f67;
-                    color: white;
+                    background-color: var(--color-second);
+                    color: var(--color-first);
                 }
             }
 
@@ -96,15 +100,19 @@
     }
 
     &__item {
-        background-color: white;
-        color: #114f67;
+        background-color: var(--color-second);
+        color: var(--color-first);
 
         word-wrap: break-word;
         display: flex;
         justify-content: space-between;
 
-        border: none;
-        border-radius: 10px;
+        border: 2px solid var(--color-first);
+        border-radius: 5px;
+
+        box-shadow: 0px 0px 2px white,
+        0px 0px 5px rgb(209, 209, 209),
+        0px 0px 10px rgb(152, 152, 152);
 
         padding: 5px 7.5px;
 
@@ -151,21 +159,35 @@
 
     &__button {
         border: none;
-        border-radius: 7.5px;
+        border-radius: 5px;
 
-        background-color: #114f67;
+        background-color: var(--color-first);
+
+        box-shadow: 0px 0px 1px white,
+        0px 0px 2px rgb(209, 209, 209),
+        0px 0px 5px rgb(152, 152, 152);
+
         padding: 6px 10px;
         cursor: pointer;
         transition: 0.2s;
 
         &:hover {
-            opacity: 0.7;
+            opacity: 0.5;
         };
 
         &__done {
             &.completed {
                 opacity: 0.5;
                 cursor: default;
+                box-shadow: none;
+
+                background-color: rgb(0, 255, 21);
+            }
+        }
+
+        &__delete {
+            &.completed {
+                background-color: rgb(0, 255, 21);
             }
         }
     }
@@ -184,7 +206,15 @@
 }
 
 .done {
-    background-color: #114f676e;
-    color: rgba(255, 255, 255, 0.818);
+    border-color: rgb(0, 255, 21);
+
+    box-shadow: 0px 0px 2px rgb(0, 255, 21),
+    0px 0px 5px rgb(0, 170, 14),
+    0px 0px 10px rgb(0, 118, 10);
+    
+    color: rgb(0, 255, 21);
+    text-shadow: 0px 0px 2px rgb(0, 255, 21),
+    0px 0px 5px rgb(0, 170, 14),
+    0px 0px 10px rgb(0, 118, 10)
 }
 

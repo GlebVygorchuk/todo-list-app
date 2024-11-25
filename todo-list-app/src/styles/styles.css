@@ -1,11 +1,12 @@
 :root {
-  --color-dark: #1c1c1c;
-  --font-family: "Oxanium";
+  --color-first: white;
+  --color-second: #080708;
+  --font-family: "Nunito";
 }
 
 @font-face {
-  font-family: "Oxanium";
-  src: url("fonts/Raleway-VariableFont_wght.woff2");
+  font-family: "Nunito";
+  src: url("fonts/Nunito-Regular.woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -39,13 +40,13 @@
 }
 @keyframes cursor {
   0% {
-    border-color: #092834;
+    border-color: var(--color-first);
   }
   50% {
     border-color: transparent;
   }
   100% {
-    border-color: #092834;
+    border-color: var(--color-first);
   }
 }
 @keyframes appear {
@@ -57,11 +58,12 @@
   }
 }
 .header__title {
+  padding-inline: 5px;
   overflow: hidden;
   white-space: nowrap;
   width: 0%;
-  border-right: solid 3px white;
-  color: #092834;
+  border-right: solid 3px var(--color-first);
+  color: var(--color-first);
   font-weight: 600;
   font-size: 55px;
   animation: typing 1s steps(8, end) forwards, cursor 1s step-end infinite;
@@ -91,26 +93,28 @@
   font-family: var(--font-family);
   font-size: 20px;
   width: 40%;
-  padding: 15px;
-  background-color: white;
-  color: #114f67;
-  border: none;
-  border-right: 1.5px solid rgba(62, 124, 148, 0.5568627451);
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  padding: 13px;
+  border: 2px solid var(--color-first);
+  background-color: var(--color-second);
+  color: var(--color-first);
+  border: 2px solid var(--color-first);
+  border-right: 1px solid var(--color-first);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0px 0px 2px white, 0px 0px 5px rgb(209, 209, 209), 0px 0px 10px rgb(152, 152, 152);
 }
 .header__create-task:focus {
   outline: none;
 }
 .header__create-task::-moz-placeholder {
   font-family: var(--font-family);
-  color: #57a1bc;
+  color: rgb(130, 130, 130);
   -moz-user-select: none;
        user-select: none;
 }
 .header__create-task::placeholder {
   font-family: var(--font-family);
-  color: #57a1bc;
+  color: rgb(130, 130, 130);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -142,11 +146,12 @@
   font-size: 25px;
   font-weight: 800;
   background-color: white;
-  color: #114f67;
+  color: var(--color-second);
   width: 10%;
-  border: none;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border: 2px solid var(--color-first);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0px 0px 2px white, 0px 0px 5px rgb(209, 209, 209), 0px 0px 10px rgb(152, 152, 152);
   cursor: pointer;
   transition: 0.15s;
   -webkit-user-select: none;
@@ -154,7 +159,7 @@
           user-select: none;
 }
 .header__button:hover {
-  background-color: #114f67;
+  background-color: var(--color-second);
   color: white;
 }
 .header__button:active {
@@ -249,22 +254,23 @@
           user-select: none;
 }
 .tasks__list__total__delete {
-  border: none;
-  border-radius: 10px;
+  border: 2px solid var(--color-first);
+  border-radius: 5px;
   align-self: center;
-  padding: 12px 60px;
+  padding: 10px 40px;
   font-family: var(--font-family);
   font-size: 25px;
   font-weight: 600;
-  color: #114f67;
-  background-color: white;
+  color: var(--color-second);
+  background-color: var(--color-first);
+  box-shadow: 0px 0px 2px white, 0px 0px 5px rgb(209, 209, 209), 0px 0px 10px rgb(152, 152, 152);
   cursor: pointer;
   transition: 0.2s;
   animation: appear 0.5s forwards;
 }
 .tasks__list__total__delete:hover {
-  background-color: #114f67;
-  color: white;
+  background-color: var(--color-second);
+  color: var(--color-first);
 }
 @media (max-width: 480px) {
   .tasks__list__total {
@@ -274,13 +280,14 @@
   }
 }
 .tasks__item {
-  background-color: white;
-  color: #114f67;
+  background-color: var(--color-second);
+  color: var(--color-first);
   word-wrap: break-word;
   display: flex;
   justify-content: space-between;
-  border: none;
-  border-radius: 10px;
+  border: 2px solid var(--color-first);
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px white, 0px 0px 5px rgb(209, 209, 209), 0px 0px 10px rgb(152, 152, 152);
   padding: 5px 7.5px;
   font-size: 20px;
   font-weight: 400;
@@ -323,18 +330,24 @@
 }
 .tasks__button {
   border: none;
-  border-radius: 7.5px;
-  background-color: #114f67;
+  border-radius: 5px;
+  background-color: var(--color-first);
+  box-shadow: 0px 0px 1px white, 0px 0px 2px rgb(209, 209, 209), 0px 0px 5px rgb(152, 152, 152);
   padding: 6px 10px;
   cursor: pointer;
   transition: 0.2s;
 }
 .tasks__button:hover {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 .tasks__button__done.completed {
   opacity: 0.5;
   cursor: default;
+  box-shadow: none;
+  background-color: rgb(0, 255, 21);
+}
+.tasks__button__delete.completed {
+  background-color: rgb(0, 255, 21);
 }
 @media (max-width: 1020px) {
   .tasks {
@@ -353,12 +366,15 @@
 }
 
 .done {
-  background-color: rgba(17, 79, 103, 0.431372549);
-  color: rgba(255, 255, 255, 0.818);
+  border-color: rgb(0, 255, 21);
+  box-shadow: 0px 0px 2px rgb(0, 255, 21), 0px 0px 5px rgb(0, 170, 14), 0px 0px 10px rgb(0, 118, 10);
+  color: rgb(0, 255, 21);
+  text-shadow: 0px 0px 2px rgb(0, 255, 21), 0px 0px 5px rgb(0, 170, 14), 0px 0px 10px rgb(0, 118, 10);
 }
 
 body {
-  background: linear-gradient(to right, #4BA3C3, #CCE6F4);
+  background-color: #080708;
   font-family: var(--font-family);
-  color: #114f67;
+  color: white;
+  text-shadow: 0px 0px 2px white, 0px 0px 5px rgb(209, 209, 209), 0px 0px 10px rgb(152, 152, 152);
 }/*# sourceMappingURL=styles.css.map */

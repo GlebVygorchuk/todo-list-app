@@ -6,7 +6,11 @@
 'taskList';
 
 body {
-    background: linear-gradient(to right, #4BA3C3, #CCE6F4);
+    background-color: #080708;
     font-family: var(--font-family);
-    color: #114f67; 
+    color: white; 
+    text-shadow: 
+    0px 0px 2px white,
+    0px 0px 5px rgb(209, 209, 209),
+    0px 0px 10px rgb(152, 152, 152);
 }
