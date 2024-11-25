@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
 
-    margin-top: 60px;
+    margin-top: 50px;
     row-gap: 30px;
 
     &__wrapper {
@@ -44,6 +44,7 @@
         overflow: hidden;
         white-space: nowrap;
         width: 0%;
+        margin-bottom: 10px;
 
         border-right: solid 3px var(--color-first);
         color: var(--color-first);
@@ -87,12 +88,17 @@
 
         border: 2px solid var(--color-first);
         border-right: 1px solid var(--color-first);
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
 
-        box-shadow: 0px 0px 2px white,
-        0px 0px 5px rgb(209, 209, 209),
-        0px 0px 10px rgb(152, 152, 152);
+        box-shadow: 0px 0px 1px white,
+        0px 0px 2px #d1d1d1,
+        0px 0px 5px rgb(152, 152, 152);
+
+        text-shadow: 
+        0px 0px 1px white,
+        0px 0px 3px rgb(209, 209, 209),
+        0px 0px 7px rgb(152, 152, 152);;
         
         &:focus {
             outline: none;
@@ -102,6 +108,11 @@
             font-family: var(--font-family);
             color: rgb(130, 130, 130);
             user-select: none;
+
+            text-shadow: 
+                0px 0px 1px rgb(130, 130, 130),
+                0px 0px 3px rgb(77, 77, 77),
+                0px 0px 7px rgb(58, 58, 58);
 
             @include mobile-small {
                 font-size: 22.5px;
@@ -114,8 +125,8 @@
 
         @include mobile-small {
             width: 60%;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
             font-size: 22.5px;
         }
     }
@@ -131,12 +142,12 @@
         width: 10%;
 
         border: 2px solid var(--color-first);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
 
-        box-shadow: 0px 0px 2px white,
-        0px 0px 5px rgb(209, 209, 209),
-        0px 0px 10px rgb(152, 152, 152);
+        box-shadow: 0px 0px 1px white,
+        0px 0px 2px #d1d1d1,
+        0px 0px 5px rgb(152, 152, 152);
         
         cursor: pointer;
         transition: 0.15s;
@@ -163,8 +174,8 @@
         @include mobile-small {
             width: 25%;
 
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
         }
     }
 }

@@ -62,11 +62,13 @@
                 font-weight: 600;
                 align-self: center;
                 user-select: none;
+
+                animation: appear 0.5s forwards;
             }
 
             &__delete {
                 border: 2px solid var(--color-first);
-                border-radius: 5px;
+                border-radius: 20px;
     
                 align-self: center;
                 padding: 5px 20px;
@@ -106,13 +108,14 @@
         word-wrap: break-word;
         display: flex;
         justify-content: space-between;
+        text-decoration: none;
 
         border: 2px solid var(--color-first);
-        border-radius: 5px;
+        border-radius: 20px;
 
-        box-shadow: 0px 0px 2px white,
-        0px 0px 5px rgb(209, 209, 209),
-        0px 0px 10px rgb(152, 152, 152);
+        box-shadow: 0px 0px 1px white,
+        0px 0px 2px #d1d1d1,
+        0px 0px 5px rgb(152, 152, 152);
 
         padding: 5px 7.5px;
 
@@ -145,7 +148,7 @@
 
         @include mobile-small {
             font-size: 22.5px;
-            border-radius: 5px;
+            border-radius: 20px;
         }
 
         &.remove {
@@ -155,16 +158,24 @@
                 animation: disappear-mobile 0.3s forwards;
             }
         }
+
+        &.done {
+           text-decoration: line-through;
+           color: rgb(46, 46, 46);
+           text-shadow: none;
+           border-color: rgb(46, 46, 46); 
+
+           box-shadow: none;
+        }
     }
 
     &__button {
         border: none;
-        border-radius: 5px;
-
+        border-radius: 15px;
         background-color: var(--color-first);
 
         box-shadow: 0px 0px 1px white,
-        0px 0px 2px rgb(209, 209, 209),
+        0px 0px 2px #d1d1d1,
         0px 0px 5px rgb(152, 152, 152);
 
         padding: 6px 10px;
@@ -181,18 +192,8 @@
                 cursor: default;
                 box-shadow: none;
 
-                background-color: rgb(0, 255, 21);
+                background-color: rgba(255, 255, 255, 0.296);
             }
-        }
-
-        &__delete {
-            &.completed {
-                background-color: rgb(0, 255, 21);
-            }
-        }
-
-        @include mobile {
-            border-radius: 3px;
         }
     }
 
@@ -207,18 +208,5 @@
     @include mobile-small {
         width: 100%;
     }
-}
-
-.done {
-    border-color: rgb(0, 255, 21);
-
-    box-shadow: 0px 0px 2px rgb(0, 255, 21),
-    0px 0px 5px rgb(0, 170, 14),
-    0px 0px 10px rgb(0, 118, 10);
-    
-    color: rgb(0, 255, 21);
-    text-shadow: 0px 0px 2px rgb(0, 255, 21),
-    0px 0px 5px rgb(0, 170, 14),
-    0px 0px 10px rgb(0, 118, 10)
 }
 
