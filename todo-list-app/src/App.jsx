@@ -49,7 +49,7 @@ function App() {
       if (todos.length === 0) {
         localStorage.setItem('todos', [])
       }
-    }, 300)
+    }, 400)
   }
 
   const handleComplete = item => {
@@ -67,7 +67,7 @@ function App() {
 
     setTimeout(() => {
       setTodos([])
-    }, 300)
+    }, 400)
   }
 
   return (

@@ -221,7 +221,7 @@
   }
   to {
     opacity: 0;
-    transform: translateX(35px);
+    transform: translateY(20px);
   }
 }
 .main {
@@ -328,11 +328,11 @@
   }
 }
 .tasks__item.remove {
-  animation: disappear 0.3s forwards;
+  animation: disappear 0.4s forwards;
 }
 @media (max-width: 770px) {
   .tasks__item.remove {
-    animation: disappear-mobile 0.3s forwards;
+    animation: disappear-mobile 0.4s forwards;
   }
 }
 .tasks__item.done {
