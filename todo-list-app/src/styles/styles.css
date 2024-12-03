@@ -24,8 +24,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
-  row-gap: 30px;
 }
 .header__wrapper {
   display: inline-block;
@@ -49,6 +47,19 @@
     border-color: rgb(98, 242, 255);
   }
 }
+@keyframes lightOn {
+  0% {
+    color: rgb(0, 72, 83);
+    text-shadow: none;
+  }
+  50% {
+    color: var(--color-first);
+    text-shadow: 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255), 0px 0px 16px rgb(35, 226, 255), 0px 0px 40px rgb(0, 221, 255);
+  }
+  100% {
+    text-shadow: 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255), 0px 0px 16px rgb(35, 226, 255);
+  }
+}
 @keyframes appear {
   from {
     opacity: 0;
@@ -58,17 +69,14 @@
   }
 }
 .header__title {
-  padding-inline: 10px;
+  padding: 30px;
   overflow: hidden;
   white-space: nowrap;
-  width: 0%;
   margin-bottom: 10px;
-  border-right: solid 3px;
   color: var(--color-first);
-  text-shadow: 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255), 0px 0px 16px rgb(35, 226, 255);
   font-weight: 600;
   font-size: 55px;
-  animation: typing 1s steps(8, end) forwards, cursor 1s step-end infinite;
+  animation: lightOn 1.5s ease-in;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -150,22 +158,21 @@
   font-family: var(--font-family);
   font-size: 25px;
   font-weight: 800;
-  background-color: rgb(98, 242, 255);
-  color: var(--color-second);
+  background-color: var(--color-second);
+  color: var(--color-first);
   width: 10%;
   border: 2px solid var(--color-first);
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  box-shadow: 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255);
+  box-shadow: inset 0px 0px 2px rgb(173, 247, 255), inset 0px 0px 4px rgb(98, 242, 255), inset 0px 0px 8px rgb(67, 230, 255), 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255);
+  text-shadow: 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255), 0px 0px 16px rgb(35, 226, 255);
   cursor: pointer;
-  transition: 0.15s;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
 .header__button:hover {
-  background-color: var(--color-second);
-  color: white;
+  opacity: 0.5;
 }
 .header__button:active {
   text-decoration: underline;
@@ -269,16 +276,15 @@
   font-family: var(--font-family);
   font-size: 25px;
   font-weight: 600;
-  color: var(--color-second);
-  background-color: rgb(98, 242, 255);
-  box-shadow: 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255);
+  color: var(--color-first);
+  background-color: var(--color-second);
+  box-shadow: inset 0px 0px 2px rgb(173, 247, 255), inset 0px 0px 4px rgb(98, 242, 255), inset 0px 0px 8px rgb(67, 230, 255), 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255);
+  text-shadow: 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255), 0px 0px 16px rgb(35, 226, 255);
   cursor: pointer;
-  transition: 0.2s;
   animation: appear 0.5s forwards;
 }
 .tasks__list__total__delete:hover {
-  background-color: var(--color-second);
-  color: var(--color-first);
+  opacity: 0.5 !important;
 }
 @media (max-width: 480px) {
   .tasks__list__total {
@@ -346,11 +352,10 @@
 .tasks__button {
   border: 2px solid white;
   border-radius: 15px;
-  background-color: rgb(120, 244, 255);
-  box-shadow: 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255);
+  background-color: var(--color-second);
+  box-shadow: inset 0px 0px 2px rgb(173, 247, 255), inset 0px 0px 4px rgb(98, 242, 255), inset 0px 0px 8px rgb(67, 230, 255), 0px 0px 2px rgb(173, 247, 255), 0px 0px 4px rgb(98, 242, 255), 0px 0px 8px rgb(67, 230, 255);
   padding: 4px 8px;
   cursor: pointer;
-  transition: 0.2s;
 }
 .tasks__button:hover {
   opacity: 0.5;
@@ -359,8 +364,10 @@
   opacity: 0.5;
   cursor: default;
   box-shadow: none;
-  border: 2px solid transparent;
-  background-color: rgb(0, 72, 83);
+  border: 2px solid rgb(0, 72, 83);
+}
+.tasks__button svg {
+  filter: drop-shadow(0px 0px 2px rgb(67, 230, 255));
 }
 @media (max-width: 1020px) {
   .tasks {

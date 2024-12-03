@@ -79,22 +79,29 @@
                 font-size: 25px;
                 font-weight: 600;
     
-                color: var(--color-second);
-                background-color: rgb(98, 242, 255);
+                color: var(--color-first);
+                background-color: var(--color-second);
 
                 box-shadow: 
+    inset 0px 0px 2px rgb(173, 247, 255),
+    inset 0px 0px 4px rgb(98, 242, 255),
+    inset 0px 0px 8px rgb(67, 230, 255),
+          0px 0px 2px rgb(173, 247, 255),
+          0px 0px 4px rgb(98, 242, 255),
+          0px 0px 8px rgb(67, 230, 255);
+
+          text-shadow: 
     0px 0px 2px rgb(173, 247, 255),
     0px 0px 4px rgb(98, 242, 255),
-    0px 0px 8px rgb(67, 230, 255);
+    0px 0px 8px rgb(67, 230, 255),
+    0px 0px 16px rgb(35, 226, 255);
     
                 cursor: pointer; 
-                transition: 0.2s;
                 animation: appear 0.5s forwards;
-    
+
                 &:hover {
-                    background-color: var(--color-second);
-                    color: var(--color-first);
-                }
+                    opacity: 0.5!important;
+                };
             }
 
             @include mobile-small {
@@ -123,8 +130,6 @@
           0px 0px 2px rgb(173, 247, 255),
           0px 0px 4px rgb(98, 242, 255),
           0px 0px 8px rgb(67, 230, 255);
-
-
 
         padding: 5px 7.5px;
 
@@ -181,16 +186,18 @@
     &__button {
         border: 2px solid white;
         border-radius: 15px;
-        background-color: rgb(120, 244, 255);
+        background-color: var(--color-second);
 
         box-shadow: 
-    0px 0px 2px rgb(173, 247, 255),
-    0px 0px 4px rgb(98, 242, 255),
-    0px 0px 8px rgb(67, 230, 255);
+    inset 0px 0px 2px rgb(173, 247, 255),
+    inset 0px 0px 4px rgb(98, 242, 255),
+    inset 0px 0px 8px rgb(67, 230, 255),
+          0px 0px 2px rgb(173, 247, 255),
+          0px 0px 4px rgb(98, 242, 255),
+          0px 0px 8px rgb(67, 230, 255);
 
         padding: 4px 8px;
         cursor: pointer;
-        transition: 0.2s;
 
         &:hover {
             opacity: 0.5;
@@ -201,10 +208,12 @@
                 opacity: 0.5;
                 cursor: default;
                 box-shadow: none;
-                border: 2px solid transparent;
-
-                background-color: rgb(0, 72, 83);
+                border: 2px solid rgb(0, 72, 83);
             }
+        }
+
+        svg {
+            filter: drop-shadow(0px 0px 2px rgb(67, 230, 255));
         }
     }
 
