@@ -49,7 +49,7 @@ function App() {
       if (todos.length === 0) {
         localStorage.setItem('todos', [])
       }
-    }, 500)
+    }, 350)
   }
 
   const handleComplete = item => {
@@ -67,7 +67,7 @@ function App() {
 
     setTimeout(() => {
       setTodos([])
-    }, 500)
+    }, 350)
   }
 
   return (
@@ -112,7 +112,7 @@ function App() {
                         return <li 
                         id={task.id} 
                         key={task.id} 
-                        className={task.isDeleting ? 'tasks__item remove' : (task.isCompleted ? 'tasks__item done' : 'tasks__item')}>
+                        className={task.isDeleting ? (task.isCompleted ? 'tasks__item done remove' : 'tasks__item remove') : (task.isCompleted ? 'tasks__item done' : 'tasks__item')}>
 
                            <div className="tasks__item__text-wrapper">
                                {task.text}
