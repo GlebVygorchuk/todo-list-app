@@ -1,13 +1,21 @@
 @keyframes appear {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    0% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1;
+    }
 }
-
 @keyframes drop {
-    from {transform: translateY(-20px);}
-    to {transform: translateY(0);}
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
-
 @keyframes disappear {
     from {
         opacity: 1;
@@ -18,18 +26,16 @@
         transform: translateX(80px);
     }
 }
-
 @keyframes disappear-mobile {
     from {
-            opacity: 1;
-            transform: translateY(0)
+        opacity: 1;
+        transform: translateY(0)
     }
     to {
-            opacity: 0;
-            transform: translateY(20px)
+        opacity: 0;
+        transform: translateY(20px)
     }
 }
-
 
 .main {
     display: flex;
@@ -45,10 +51,8 @@
 
     &__list {
         list-style: none;
-
         display: flex;
         flex-direction: column;
-
         row-gap: 10px;
         margin: 0;
         padding: 0;
@@ -59,48 +63,34 @@
             column-gap: 10px;
 
             p {
-                margin: 15px;
+                margin: 15px 15px;
                 font-size: 30px;
                 font-weight: 600;
                 align-self: center;
                 user-select: none;
-
                 animation: appear 0.5s forwards;
+                color: transparent;
+                background: var(--button-gradient);
+                -webkit-background-clip: text;
             }
 
             &__delete {
-                border: 2px solid var(--color-first);
+                border: 2px solid transparent;
                 border-radius: 15px;
-    
                 align-self: center;
-                padding: 5px 20px;
-    
+                padding: 7.5px 40px;
                 font-family: var(--font-family);
                 font-size: 25px;
                 font-weight: 600;
-    
                 color: var(--color-first);
-                background-color: var(--color-second);
-
-                box-shadow: 
-    inset 0px 0px 2px rgb(173, 247, 255),
-    inset 0px 0px 4px rgb(98, 242, 255),
-    inset 0px 0px 8px rgb(67, 230, 255),
-          0px 0px 2px rgb(173, 247, 255),
-          0px 0px 4px rgb(98, 242, 255),
-          0px 0px 8px rgb(67, 230, 255);
-
-          text-shadow: 
-    0px 0px 2px rgb(173, 247, 255),
-    0px 0px 4px rgb(98, 242, 255),
-    0px 0px 8px rgb(67, 230, 255),
-    0px 0px 16px rgb(35, 226, 255);
-    
+                background: var(--button-gradient);
                 cursor: pointer; 
                 animation: appear 0.5s forwards;
+                transition: 0.2s;
 
                 &:hover {
-                    opacity: 0.5!important;
+                    background: linear-gradient(to right, #003459, #040F16);
+                    text-decoration: underline
                 };
             }
 
@@ -112,40 +102,23 @@
     }
 
     &__item {
-        background-color: var(--color-second);
+        background: var(--block-gradient);
         color: var(--color-first);
-
         word-wrap: break-word;
         display: flex;
         justify-content: space-between;
-        text-decoration: none;
-
-        border: 2px solid var(--color-first);
-        border-radius: 20px;
-
-        box-shadow: 
-    inset 0px 0px 2px rgb(173, 247, 255),
-    inset 0px 0px 4px rgb(98, 242, 255),
-    inset 0px 0px 8px rgb(67, 230, 255),
-          0px 0px 2px rgb(173, 247, 255),
-          0px 0px 4px rgb(98, 242, 255),
-          0px 0px 8px rgb(67, 230, 255);
-
+        border-radius: 15px;
         padding: 5px 7.5px;
-
-        font-size: 20px;
+        font-size: 22.5px;
         font-weight: 400;
-
-        opacity: 1;
-        animation: appear 0.3s forwards, drop 0.3s forwards;
-        will-change: transform;
-        transition: 0.2s;
+        animation: drop 0.3s forwards;
+        transition: 0.5s;
 
         &__buttons {
             display: flex;
             justify-content: space-between;
             align-self: center;
-            column-gap: 5px;
+            column-gap: 2px;
         }
 
         &__item-wrapper {
@@ -160,11 +133,6 @@
             margin-left: 7.5px;
         }
 
-        @include mobile-small {
-            font-size: 22.5px;
-            border-radius: 20px;
-        }
-
         &.remove {
             animation: disappear 0.4s forwards;
 
@@ -175,56 +143,36 @@
 
         &.done {
            text-decoration: line-through;
-           color: rgb(0, 72, 83);
-           text-shadow: none;
-           border-color: rgb(0, 72, 83); 
-
-           box-shadow: none;
+           background: #3b4a5f89;
         }
     }
 
     &__button {
-        border: 2px solid white;
+        border: none;
         border-radius: 15px;
-        background-color: var(--color-second);
-
-        box-shadow: 
-    inset 0px 0px 2px rgb(173, 247, 255),
-    inset 0px 0px 4px rgb(98, 242, 255),
-    inset 0px 0px 8px rgb(67, 230, 255),
-          0px 0px 2px rgb(173, 247, 255),
-          0px 0px 4px rgb(98, 242, 255),
-          0px 0px 8px rgb(67, 230, 255);
-
-        padding: 4px 8px;
+        background: var(--button-gradient);
+        padding: 6px 10px;
         cursor: pointer;
+        transition: 0.15s;
 
         &:hover {
-            opacity: 0.5;
+            opacity: 0.55;
         };
 
         &__done {
             &.completed {
-                opacity: 0.5;
+                opacity: 0.3;
                 cursor: default;
-                box-shadow: none;
-                border: 2px solid rgb(0, 72, 83);
             }
-        }
-
-        svg {
-            filter: drop-shadow(0px 0px 2px rgb(67, 230, 255));
         }
     }
 
     @include tablet {
         width: 60%;
     }
-
     @include mobile {
         width: 80%;
     }
-
     @include mobile-small {
         width: 100%;
     }

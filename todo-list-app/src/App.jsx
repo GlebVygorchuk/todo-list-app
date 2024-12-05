@@ -5,6 +5,7 @@ function App() {
   const [todos, setTodos] = useState([])
   const [inputValue, setInputValue] = useState('')
 
+
   useEffect(() => {
     const savedTodos = localStorage.getItem('todos')
     if (savedTodos) {
@@ -12,11 +13,13 @@ function App() {
     }
   }, [])
 
+
   useEffect(() => {
     if (todos.length > 0) {
       localStorage.setItem('todos', JSON.stringify(todos))
     }
   }, [todos])
+
 
   useEffect(() => {
     if (todos.length === 0) {
@@ -24,17 +27,20 @@ function App() {
     }
   }, [todos])
 
+
   const handleClick = () => {
     setInputValue('')
     const newTodo = [...todos, {id: Math.random(), text: inputValue}]
     setTodos(newTodo)
   }
 
+
   const handleEnterPress = e => {
     if (e.key === 'Enter') {
       handleClick()
     }
   }
+
 
   const handleDelete = item => {
     const updatedTodos = todos.map(todo => 
@@ -52,12 +58,14 @@ function App() {
     }, 350)
   }
 
+
   const handleComplete = item => {
     const updatedTodos = todos.map(todo => 
       todo.id === item.id ? {...todo, isCompleted: true} : todo
     )
     setTodos(updatedTodos)
   }
+
 
   const deleteAll = () => {
     const updatedTodos = todos.map(todo => {
@@ -69,6 +77,7 @@ function App() {
       setTodos([])
     }, 350)
   }
+  
 
   return (
     <>
